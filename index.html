@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINAURI.ID — Blog Futuristic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark">
+    <!-- ✨ Layer animasi partikel -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- 🧭 Navbar -->
+    <div class="navbar glass">
+        <h1 class="logo-glow">FINAURI.ID</h1>
+        <ul class="nav-links">
+            <li onclick="showSection('home')">Home</li>
+            <li onclick="showSection('profilePosts')">Profil</li>
+            <li><a href="http://www.ubpkarawang.ac.id" target="_blank">UBP Karawang</a></li>
+            <li><button class="toggle-btn" id="toggleMode">
+             <i class="fa-solid fa-sun"></i>
+            </button></li>
+
+        </ul>
+        <div class="menu-right">
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <button class="toggle-btn" id="toggleModeMobile">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 📱 Mobile Menu -->
+    <ul class="mobile-menu glass" id="mobileMenu">
+        <li onclick="showSection('home');toggleMenu()">Home</li>
+        <li onclick="showSection('profilePosts');toggleMenu()">Profil</li>
+        <li><a href="http://www.ubpkarawang.ac.id" target="_blank">UBP Karawang</a></li>
+    </ul>
+
+    <!-- 💎 Container utama -->
+    <div class="container">
+
+        <!-- 🏠 HOME -->
+        <div id="home" class="posts-wrapper">
+            <div class="home-header">
+                <img src="img/bgh.png" alt="Background" class="home-bg">
+
+                <!-- Profil overlay -->
+                <div class="home-profile-top glass">
+                    <img src="img/fp.png" alt="Foto Profil">
+                    <h2>Andika Khoir Rijal</h2>
+                    <div class="profile-separator"></div>
+                </div>
+            </div>
+
+            <h3 class="blog-post-title">✨ Blog Post</h3>
+            <div class="posts" id="homePosts"></div>
+        </div>
+
+        <!-- 👤 PROFIL -->
+        <div id="profilePosts" style="display:none;">
+            <div class="profile glass">
+                <img src="img/fp.png" alt="Foto Profil">
+                <h2>Andika Khoir Rijal</h2>
+                <p><b>NIM:</b> 24416255201047</p>
+                <p><b>Kelas:</b> IF24B</p>
+                <p><b>Email:</b> if24.andikarijal@mhs.ubpkarawang.ac.id</p>
+                <p><b>No. HP:</b> +62 895-1335-5063</p>
+            </div>
+
+            <div class="about glass">
+                <h3>Tentang Saya</h3>
+                <p>
+                    Halo! Saya <b>Andika Khoir Rijal</b>, mahasiswa Informatika di <b>Universitas Buana Perjuangan Karawang</b>. Saya suka dunia <b>IT</b> dan <b>Trading</b> — dua hal yang sama-sama melatih logika, data, dan strategi 💻📊
+                </p>
+
+                <p>
+                    <b>Kenapa IT?</b> Karena saya suka berpikir sistematis dan mencari solusi kreatif dari data. Dunia database mengajarkan saya tentang struktur, efisiensi, dan presisi. Saya percaya kemampuan ini bisa dipakai di dunia apapun, termasuk
+                    finansial.
+                </p>
+
+                <p>
+                    <b>My Chill Zone 🕹️</b>
+                    <ul>
+                        <li><b>Catur</b> – Strategi & kesabaran.</li>
+                        <li><b>Game</b> – Relaksasi + analisis cepat.</li>
+                        <li><b>Badminton</b> – Keseimbangan fisik & fokus.</li>
+                        <li><b>Anime</b> – Inspirasi & hiburan.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- 📘 DETAIL POST -->
+        <div id="detail" class="detail glass" style="display:none;"></div>
+
+    </div>
+
+    <!-- ⚡ Footer -->
+    <footer class="glass footer-glow">
+        <div class="footer-content">
+            &copy; 2025 FINAURI.ID — All Rights Reserved.
+            <div class="social-links">
+                <a href="mailto:if24.andikarijal@mhs.ubpkarawang.ac.id"><i class="fas fa-envelope"></i></a>
+                <a href="https://youtube.com/@finauri.id_if?si=PLjrkqtusTG1v1Vn" target="_blank"><i
+            class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/akr_1503?igsh=MW1keGozbHNqaXhyNA==" target="_blank"><i
+            class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

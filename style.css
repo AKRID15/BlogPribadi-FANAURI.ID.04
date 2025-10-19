@@ -1,0 +1,455 @@
+/* 🌈 FINAURI.ID Glassmorphism v2 Theme */
+
+
+/* Font: Poppins & Orbitron | Style: Futuristic Purple + Dynamic Glow */
+
+:root {
+    /* Light Mode */
+    --bg-gradient: linear-gradient(135deg, #e8d9ff, #c3b3ff, #b9a9ff);
+    --text-color: #1a1a1a;
+    --accent: #8b5cf6;
+    --card-bg: rgba(255, 255, 255, 0.35);
+    --border-glow: rgba(139, 92, 246, 0.5);
+}
+
+body.dark {
+    /* Dark Mode */
+    --bg-gradient: linear-gradient(135deg, #1b0033, #2e0066, #3b0a91);
+    --text-color: #f5f5f5;
+    --accent: #c084fc;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(192, 132, 252, 0.5);
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background 0.6s ease, color 0.6s ease;
+}
+
+
+/* ✨ Efek partikel canvas */
+
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+
+/* 🧊 Efek kaca transparan */
+
+.glass {
+    backdrop-filter: blur(12px);
+    background: var(--card-bg);
+    border: 1px solid var(--border-glow);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    transition: all 0.4s ease;
+}
+
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 30px;
+}
+
+.logo-glow {
+    font-family: "Orbitron", sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #8b5cf6, #7dd3fc);
+    background-clip: text;
+    /* Standar CSS (beberapa browser baru dukung ini) */
+    -webkit-background-clip: text;
+    /* Untuk Chrome, Safari, Edge, Opera */
+    color: transparent;
+    /* Tambahan modern pengganti text-fill-color */
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.6), 0 0 20px rgba(139, 92, 246, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+
+/* ✨ Efek berdenyut lembut pada logo */
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 10px rgba(139, 92, 246, 0.6), 0 0 20px rgba(139, 92, 246, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(139, 92, 246, 0.6), 0 0 20px rgba(139, 92, 246, 0.4);
+    }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links li,
+.nav-links a {
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li:hover,
+.nav-links a:hover {
+    color: var(--accent);
+    transform: scale(1.08);
+}
+
+
+/* Toggle Buttons */
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.toggle-btn:hover {
+    transform: rotate(20deg);
+}
+
+
+/* 📱 Mobile menu */
+
+.menu-right {
+    display: none;
+}
+
+.menu-toggle {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.mobile-menu li {
+    list-style: none;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.mobile-menu li:hover {
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* 💎 Container */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* 🏠 Home Section */
+
+.home-header {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.home-bg {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 25px;
+    filter: brightness(0.8);
+}
+
+.home-profile-top {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.home-profile-top img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    object-fit: cover;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+}
+
+.home-profile-top h2 {
+    color: var(--accent);
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+}
+
+.profile-separator {
+    width: 80%;
+    height: 5px;
+    margin: 10px auto;
+    background: linear-gradient(90deg, #7dd3fc, #a78bfa);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+}
+
+.blog-post-title {
+    text-align: center;
+    color: var(--accent);
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+
+/* 📰 Post Cards */
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+}
+
+.post {
+    overflow: hidden;
+    cursor: pointer;
+    padding-bottom: 10px;
+    transform: scale(1);
+    transition: all 0.4s ease;
+}
+
+.post:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+}
+
+.post img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.post h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+
+/* 📘 Detail Post */
+
+.detail {
+    padding: 25px;
+    animation: fadeIn 0.8s ease;
+}
+
+.detail img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #7dd3fc, #a78bfa);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* 👤 Profil */
+
+.profile {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+}
+
+.profile h2 {
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+.about {
+    padding: 20px 30px;
+    line-height: 1.6;
+}
+
+.about h3 {
+    color: var(--accent);
+}
+
+
+/* ✨ Footer */
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.footer-glow {
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--accent);
+    box-shadow: 0 -2px 25px rgba(139, 92, 246, 0.4);
+}
+
+.social-links a {
+    color: var(--accent);
+    margin: 0 12px;
+    font-size: 22px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #7dd3fc;
+}
+
+
+/* 🌟 Animasi */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 📱 Responsif */
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .mobile-menu {
+        display: flex;
+    }
+}
+
+
+/* Hilangkan garis bawah pada semua link di navbar dan mobile menu */
+
+.nav-links a,
+.mobile-menu a {
+    text-decoration: none;
+    /* Hilangkan underline */
+    color: var(--text-color);
+    /* Sesuaikan warna teks agar konsisten */
+    transition: color 0.3s, transform 0.3s;
+}
+
+
+/* Efek saat hover biar tetap keren */
+
+.nav-links a:hover,
+.mobile-menu a:hover {
+    color: var(--accent);
+    transform: scale(1.05);
+}
+
+
+/* 🌗 Animasi glow & rotasi pada tombol mode */
+
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--accent);
+    transition: transform 0.5s ease, color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.toggle-btn:hover {
+    transform: rotate(30deg) scale(1.1);
+    color: #a78bfa;
+    text-shadow: 0 0 12px var(--accent);
+}
+
+
+/* ✨ Animasi rotasi pas diganti mode */
+
+.rotate-glow {
+    animation: rotateGlow 0.7s ease;
+}
+
+@keyframes rotateGlow {
+    0% {
+        transform: rotate(0deg) scale(1);
+        text-shadow: 0 0 10px var(--accent);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.3);
+        text-shadow: 0 0 20px #c084fc;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        text-shadow: 0 0 10px var(--accent);
+    }
+}
